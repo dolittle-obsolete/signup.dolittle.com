@@ -1,6 +1,4 @@
 .sign_up {
-    @extend %flex-container-horizontal;
-    flex-wrap: wrap;
     border-radius: 0.375rem;
     transform: rotateX(0deg);
     transform-origin: 50% 50%;
@@ -8,9 +6,7 @@
     opacity: 0.95;
     width: 100%;
     max-width: 55rem;
-
     h1 {
-        width: 100%;
         font-size: 2rem;
         line-height: 2.5rem;
         margin: $grid-gutter/2 0 $grid-gutter;
@@ -21,6 +17,17 @@
             font-size: 2.5rem;
         }
     }
+    h3 {
+        margin-bottom: $grid-gutter/2;
+    }
+    .columns {
+        @extend %flex-container-horizontal;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        @include media-bp-min(tablet) {
+            flex-direction: row;
+        }
+    }
     .left,
     .right {
         flex: 0 0 auto;
@@ -28,9 +35,9 @@
     }
     .left {
         @extend %flex-container-vertical;
-        border-bottom: 0.0625rem solid $color-gray-medium;
-        padding-bottom: $grid-gutter * 2;
-        margin-bottom: $grid-gutter * 2;
+        border-top: 0.0625rem solid $color-gray-medium;
+        padding-top: $grid-gutter * 2;
+        margin-top: $grid-gutter * 2;
 
         .site_logo {
             position: relative;
@@ -57,10 +64,10 @@
 
         @include media-bp-min(tablet) {
             width: 40%;
-            padding-bottom: 0;
+            padding-top: 0;
             padding-right: $grid-gutter;
-            margin-bottom: 0;
-            border-bottom: 0;
+            margin-top: 0;
+            border-top: 0;
             border-right: 0.0625rem solid $color-gray-medium;
         }
         @include media-bp-min(desktop) {

@@ -1,3 +1,195 @@
+/* MailChimp Form Embed Code - Classic - 12/17/2015 v10.7 */
+#mc_embed_signup {
+    color: $color-gray-dark;
+    .button {
+        font-size: 1rem;
+        line-height: 1rem;
+        padding: 0 $grid-gutter;
+    }
+    form {
+        display: block;
+        position: relative;
+        text-align: left;
+        padding: 0;
+    }
+
+    input {
+        border: 1px solid #abb0b2;
+        border-radius: 0.1875rem;
+    }
+    input[type='checkbox'] {
+        -webkit-appearance: checkbox;
+    }
+    input[type='radio'] {
+        -webkit-appearance: radio;
+    }
+    input:focus {
+        border-color: #333;
+    }
+    .button {
+        background-color: $color-brand-dark-blue;
+        border: 0 none;
+        transition: all 0.23s ease-in-out 0s;
+        color: #ffffff;
+        cursor: pointer;
+        display: block;
+        font-size: 1rem;
+        font-weight: 300;
+        height: 2rem;
+        letter-spacing: 0.0625rem;
+        line-height: 2rem;
+        margin: 0 auto;
+        padding: 0 1.375rem;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        width: auto;
+    }
+    .button:hover {
+        background-color: #777;
+    }
+    .small-meta {
+        font-size: 11px;
+    }
+    .nowrap {
+        white-space: nowrap;
+    }
+
+    .mc-field-group {
+        position: relative;
+        label {
+            display: block;
+            margin-bottom: 3px;
+        }
+        input {
+            display: block;
+            width: 100%;
+            max-width: 20rem;
+            padding: 0.5rem 0;
+            text-indent: 2%;
+        }
+        select {
+            display: inline-block;
+            width: 99%;
+            padding: 5px 0;
+            margin-bottom: 2px;
+        }
+
+        &.input-group ul {
+            margin: 0;
+            padding: 5px 0;
+            list-style: none;
+        }
+        &.input-group ul li {
+            display: block;
+            padding: 3px 0;
+            margin: 0;
+        }
+        &.input-group label {
+            display: inline;
+        }
+        &.input-group input {
+            display: inline;
+            width: auto;
+            border: none;
+        }
+    }
+    .size1of2 {
+        display: inline-block;
+        width: 46%;
+        margin-right: 4%;
+    }
+
+    .datefield,
+    .phonefield-us {
+        padding: 5px 0;
+        input {
+            display: inline;
+            width: 60px;
+            margin: 0 2px;
+            letter-spacing: 1px;
+            text-align: center;
+            padding: 5px 0 2px 0;
+        }
+        label {
+            display: none;
+        }
+    }
+
+    .phonefield-us .phonearea input,
+    .phonefield-us .phonedetail1 input {
+        width: 40px;
+    }
+    .datefield .monthfield input,
+    .datefield .dayfield input {
+        width: 30px;
+    }
+
+    .indicates-required {
+        text-align: right;
+        font-size: 11px;
+        margin-right: 4%;
+    }
+    .asterisk {
+        color: #e85c41;
+        font-size: 150%;
+        font-weight: normal;
+        position: relative;
+        top: 5px;
+    }
+    .clear {
+        clear: both;
+    }
+
+    div#mce-responses {
+        width: 90%;
+        margin: 0 5%;
+    }
+    div.response {
+        margin: 0 0 $grid-gutter 0;
+        padding: $grid-gutter;
+    }
+    #mce-error-response {
+        display: none;
+    }
+    #mce-success-response {
+        color: #529214;
+        display: none;
+    }
+    label.error {
+        display: block;
+        width: auto;
+        margin-left: 1.05em;
+        text-align: left;
+        padding: 0.5em 0;
+    }
+
+    #num-subscribers {
+        font-size: 1.1em;
+    }
+    #num-subscribers span {
+        padding: 0.5em;
+        border: 1px solid #ccc;
+        margin-right: 0.5em;
+        font-weight: bold;
+    }
+
+    #mc-embedded-subscribe-form div.mce_inline_error {
+        display: inline-block;
+        margin: 2px 0 1em 0;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 3px;
+        font-size: 14px;
+        font-weight: normal;
+        z-index: 1;
+        color: #e85c41;
+    }
+    #mc-embedded-subscribe-form input.mce_inline_error {
+        border: 2px solid #e85c41;
+    }
+}
+
 #mc-embedded-subscribe-form {
     input[type='checkbox'] {
         display: inline;
@@ -12,15 +204,12 @@
     }
 }
 #mergeRow-gdpr {
-    margin-top: 20px;
-
-    .content__gdpr {
-        p {
-            font-size: 0.75rem;
-        }
-    }
+    .content__gdpr,
     .content__gdprLegal {
-        p {
+        p.no_margin {
+            margin-bottom: 0;
+        }
+        p.small {
             font-size: 0.6875rem;
         }
     }
@@ -30,11 +219,13 @@
         }
     }
 }
-#mc_embed_signup {
-    color: $color-gray-dark;
-    .button {
-        font-size: 1rem;
-        line-height: 1rem;
-        padding: 0 $grid-gutter;
-    }
+
+* html #mc_embed_signup .size1of2 {
+    margin-right: 2%; /* Fix for IE6 double margins. */
+}
+#mc-embedded-subscribe {
+    clear: both;
+    width: auto;
+    display: block;
+    margin: 1em 0 1em 5%;
 }
