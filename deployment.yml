@@ -1,15 +1,18 @@
 ---
+  apiVersion: apps/v1
   kind: Deployment
-  apiVersion: extensions/v1beta1
   metadata:
+    namespace: dolittle-campaigns
     name: signup
-    namespace: dolittle
   spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        campaign: signup
     template:
       metadata:
         labels:
-          app: signup
-          name: signup
+          campaign: signup
       spec:
         containers:
         - name: signup
@@ -17,22 +20,34 @@
           imagePullPolicy: Always
           ports:
           - containerPort: 80
+
 ---
   apiVersion: v1
   kind: Service
   metadata:
+    namespace: dolittle-campaigns
     name: signup
-    namespace: dolittle
-    labels:
-      app: signup
   spec:
     type: LoadBalancer
     ports:
     - port: 80
-      targetPort: 80
-      name: signup-port
+      name: http
       protocol: TCP
     selector:
-      app: signup
-      name: signup
-  
+      campaign: signup
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: dolittle-campaigns
+  name: signup
+spec:
+  rules:
+  - host: signup.dolittle.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: signup
+          servicePort: 80
