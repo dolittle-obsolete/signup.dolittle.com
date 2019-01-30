@@ -4,11 +4,10 @@
     border-radius: 0.375rem;
     transform: rotateX(0deg);
     transform-origin: 50% 50%;
-    transition: opacity 1s ease, transform 1s ease, zoom 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
     opacity: 0.95;
     width: 100%;
     max-width: 55rem;
-    zoom: 1;
 
     h1 {
         width: 100%;
@@ -26,9 +25,6 @@
     .right {
         flex: 0 0 auto;
         width: 100%;
-        @include media-bp-min(desktop) {
-            padding: $grid-gutter * 2;
-        }
     }
     .left {
         border-bottom: 0.0625rem solid $color-gray-medium;
@@ -55,15 +51,22 @@
             width: 40%;
             padding-bottom: 0;
             padding-right: $grid-gutter;
+            padding-top: $grid-gutter * 3;
             margin-bottom: 0;
             border-bottom: 0;
             border-right: 0.0625rem solid $color-gray-medium;
+        }
+        @include media-bp-min(desktop) {
+            padding-left: 0;
         }
     }
     .right {
         @include media-bp-min(tablet) {
             width: 60%;
             padding-left: $grid-gutter;
+        }
+        @include media-bp-min(desktop) {
+            padding-right: 0;
         }
     }
     .icons {
@@ -77,6 +80,5 @@
     body.is-preload & {
         transform: rotateX(15deg);
         opacity: 0;
-        zoom: 0.5;
     }
 }

@@ -1,0 +1,40 @@
+#mc-embedded-subscribe-form {
+    input[type='checkbox'] {
+        display: inline;
+        width: auto;
+        margin-right: 10px;
+    }
+    .mc_fieldset {
+        border: none;
+        min-height: 0;
+        padding-bottom: 0;
+        margin-bottom: $grid-gutter;
+    }
+}
+#mergeRow-gdpr {
+    margin-top: 20px;
+
+    .content__gdpr {
+        p {
+            font-size: 0.75rem;
+        }
+    }
+    .content__gdprLegal {
+        p {
+            font-size: 0.6875rem;
+        }
+    }
+    fieldset {
+        label {
+            font-weight: normal;
+        }
+    }
+}
+#mc_embed_signup {
+    color: $color-gray-dark;
+    .button {
+        font-size: 1rem;
+        line-height: 1rem;
+        padding: 0 $grid-gutter;
+    }
+}
