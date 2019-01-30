@@ -6,7 +6,6 @@ RUN ["npm", "install"]
 COPY ./src/. /build/src
 COPY ./webpack.config.js /build
 COPY ./webpack.parts.js /build
-COPY ./.npmignore /build
 
 RUN node ./node_modules/webpack/bin/webpack.js -p
 
