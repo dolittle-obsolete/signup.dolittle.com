@@ -2,11 +2,25 @@
     @extend %flex-container-horizontal;
     flex-wrap: wrap;
     border-radius: 0.375rem;
+    transform: rotateX(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 1s ease, transform 1s ease, zoom 1s ease;
+    opacity: 0.95;
     width: 100%;
+    max-width: 55rem;
+    zoom: 1;
+
     h1 {
         width: 100%;
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: 2.5rem;
+        margin: $grid-gutter/2 0 $grid-gutter;
+        text-transform: uppercase;
+        letter-spacing: 0.125rem;
+        text-align: center;
+        @include media-bp-min(tablet) {
+            font-size: 2.5rem;
+        }
     }
     .left,
     .right {
@@ -20,9 +34,7 @@
         border-bottom: 0.0625rem solid $color-gray-medium;
         padding-bottom: $grid-gutter * 2;
         margin-bottom: $grid-gutter * 2;
-        @include media-bp-min(desktop) {
-            width: 40%;
-        }
+
         .site_logo {
             position: relative;
 
@@ -30,12 +42,41 @@
                 height: 15rem;
                 margin: 0 auto;
                 display: block;
+                @include media-bp-min(tablet) {
+                    height: 13rem;
+                }
+                @include media-bp-min(desktop) {
+                    height: 15rem;
+                }
             }
+        }
+
+        @include media-bp-min(tablet) {
+            width: 40%;
+            padding-bottom: 0;
+            padding-right: $grid-gutter;
+            margin-bottom: 0;
+            border-bottom: 0;
+            border-right: 0.0625rem solid $color-gray-medium;
         }
     }
     .right {
-        @include media-bp-min(desktop) {
+        @include media-bp-min(tablet) {
             width: 60%;
+            padding-left: $grid-gutter;
         }
+    }
+    .icons {
+        @extend %flex-container-horizontal;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include media-bp-min(tablet) {
+            justify-content: space-around;
+        }
+    }
+    body.is-preload & {
+        transform: rotateX(15deg);
+        opacity: 0;
+        zoom: 0.5;
     }
 }

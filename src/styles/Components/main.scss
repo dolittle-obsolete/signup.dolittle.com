@@ -2,8 +2,12 @@
     @extend %flex-container-vertical-center;
     justify-content: space-between;
     width: 100%;
-    padding: $grid-gutter;
-    @include media-bp-min(desktop) {
+    padding: $grid-gutter * 2 $grid-gutter;
+    position: relative;
+    z-index: 2;
+    perspective: 62rem;
+    perspective-origin: 50% 0;
+    @include media-bp-min(tablet) {
         padding: $grid-gutter * 3;
     }
 }
