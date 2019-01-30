@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url('../images/overlay.png'), linear-gradient(60deg, rgba($color-brand-orange, 0.5) 5%, rgba($color-brand-dark-blue, 0.65)),
+        url('../images/jesus-kiteque-224069.jpg');
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-size: 100px 100px, cover, cover;
+    background-position: top left, center center, bottom center;
+    background-attachment: fixed, fixed, fixed;
+
+    &:after {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: inherit;
+        opacity: 0;
+        z-index: 1;
+        background-image: url('../images/overlay.png'), linear-gradient(60deg, rgba($color-brand-orange, 0.5) 5%, rgba($color-brand-dark-blue, 0.65));
+        background-repeat: repeat, no-repeat;
+        background-size: 100px 100px, cover;
+        background-position: top left, center center;
+        transition: opacity 1.75s ease-out;
+
+        &.is-preload {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.acrylic {
+    padding: $grid-gutter; //optional
+    &::before {
+        background: #333 url('../images/jesus-kiteque-224069.jpg') fixed center;
+        background-size: cover;
+    }
+}

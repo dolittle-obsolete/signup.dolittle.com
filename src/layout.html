@@ -13,13 +13,29 @@
         <link rel="apple-touch-icon" sizes="152x152" href="images/favicon_152x152.png" />
         <link rel="apple-touch-icon" sizes="167x167" href="images/favicon_167x167.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_180x180.png" />
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css" />
+
+        <style type="text/css">
+            #mc-embedded-subscribe-form input[type='checkbox'] {
+                display: inline;
+                width: auto;
+                margin-right: 10px;
+            }
+            #mergeRow-gdpr {
+                margin-top: 20px;
+            }
+            #mergeRow-gdpr fieldset label {
+                font-weight: normal;
+            }
+            #mc-embedded-subscribe-form .mc_fieldset {
+                border: none;
+                min-height: 0px;
+                padding-bottom: 0px;
+            }
+        </style>
     </head>
 
     <body>
-        <div class="main-body">
-            <main class="main-content">
-                ${require('./Pages/'+htmlWebpackPlugin.options.filename)}
-            </main>
-        </div>
+        <main class="main_content">${require('./Pages/'+htmlWebpackPlugin.options.filename)}</main>
     </body>
 </html>

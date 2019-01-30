@@ -1,0 +1,9 @@
+.main_content {
+    @extend %flex-container-vertical-center;
+    justify-content: space-between;
+    width: 100%;
+    padding: $grid-gutter;
+    @include media-bp-min(desktop) {
+        padding: $grid-gutter * 3;
+    }
+}
